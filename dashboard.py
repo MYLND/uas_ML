@@ -11,7 +11,7 @@ from sklearn import metrics
 sns.set(style='dark')
 
 # Load data
-data = pd.read_csv('/content/Phising_dataset.csv', encoding='windows-1254')
+data = pd.read_csv(Phising_dataset.csv, encoding='windows-1254')
 
 # Display dataset
 st.title("Phishing Dataset Overview")
