@@ -11,7 +11,7 @@ from sklearn import metrics
 sns.set(style='dark')
 
 # Load data
-data = pd.read_csv(Phising_dataset.csv, encoding='windows-1254')
+data = pd.read_csv('Phising_dataset.csv', encoding='windows-1254')
 
 # Display dataset
 st.title("Phishing Dataset Overview")
@@ -32,18 +32,6 @@ data = data.drop(['URL'], axis=1)
 # Display dataset description
 st.subheader("Dataset Description")
 st.write(data.describe().T)
-
-# Display correlation heatmap
-st.subheader("Correlation Heatmap")
-fig, ax = plt.subplots(figsize=(15, 15))
-sns.heatmap(data.corr(), annot=True, ax=ax)
-st.pyplot(fig)
-
-# Display pairplot for selected features
-st.subheader("Pairplot for Selected Features")
-df = data[['Presence of IP Address', 'Length of URL', 'No. of Slashes', 'Special Character', 'Age of URL', 'Result']]
-sns.pairplot(data=df, hue="Result", corner=True)
-st.pyplot()
 
 # Display pie chart of phishing vs non-phishing
 st.subheader("Phishing URL Count")
